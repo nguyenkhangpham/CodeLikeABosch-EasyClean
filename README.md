@@ -1,78 +1,68 @@
 
-# johnathan_s_application4
+# johnathan_s_application3
+### Table of contents
+- [System requirements](#system-requirements)
+- [Figma design guidelines for better UI accuracy](#figma-design-guideline-for-better-accuracy)
+- [Check the UI of the entire app](#app-navigations)
+- [Application structure](#project-structure)
+- [How to format your code?](#how-you-can-do-code-formatting)
+- [How you can improve code readability?](#how-you-can-improve-the-readability-of-code)
+- [Libraries and tools used](#libraries-and-tools-used)
+- [Support](#support)
 
-Built with AndroidX Support
+### System requirements
 
-Requires Android Studio Arctic Fox | 2020.3.1 or higher.
+Dart SDK Version 2.18.0 or greater.
+Flutter SDK Version 3.3.0 or greater.
 
-Current Kotlin Version 1.7.20
+### Figma design guidelines for better UI accuracy
 
+Read our guidelines to increase the accuracy of design-to-code conversion by optimizing Figma designs.
+https://docs.dhiwise.com/docs/Designguidelines/intro
 
-### SDK Versions
+### Check the UI of the entire app
 
-compileSdkVersion 33
+Check the UI of all the app screens from a single place by setting up the 'initialRoute'  to AppNavigation in the AppRoutes.dart file.
 
-buildToolsVersion "30.0.3"
+### Application structure
 
-minSdkVersion 23
-
-targetSdkVersion 33
-
-
-### Libraries
-
-1. Retrofit- REST API Call
-https://square.github.io/retrofit/
-2. Glide - Image Loading and caching.
-https://github.com/bumptech/glide
-3. Material Design Components - Google's latest Material Components.
-https://material.io/develop/android
-4. koin - Dependency Injection
-https://insert-koin.io/
-
-### Figma design guideline for better accuracy
-
-Read our guidelines to increase the accuracy of design conversion to code by optimizing Figma designs. 
-https://docs.dhiwise.com/docs/Designguidelines/intro .
-
-### App Navigation
-
-Check your app\'s UI from the AppNavigation screens of your app.
-
-### Package Structure
-
+After successful build, your application structure should look like this:
 
 ```
-├── appcomponents       
-│ ├── di                 - Dependency Injection Components 
-│ │ └── MyApp.kt
-│ ├── network            - REST API Call setup
-│ │ ├── ResponseCode.kt
-│ │ └── RetrofitProvider.kt
-│ └── ui                 - Data Binding Utilities
-│     └── CustomBindingAdapter.kt
-├── constants            - Constant Files
-│ ├── IntegerConstants.kt
-│ └── StringConstants.kt
-├── extensions           - Kotlin Extension Function Files
-│ └── Strings.kt
-├── modules              - Application Specific code
-│ └── example            - A module of Application 
-│  ├── ui                - UI handling classes
-│  └── data              - Data Handling classes
-│    ├── viewmodel       - ViewModels for the UI
-│    └── model           - Model for the UI
-└── network              - REST API setup
-  ├── models             - Request/Response Models
-  ├── repository         - Network repository
-  ├── resources          - Common classes for API
-  └── RetrofitService.kt
+.
+├── android                         - It contains files required to run the application on an Android platform.
+├── assets                          - It contains all images and fonts of your application.
+├── ios                             - It contains files required to run the application on an iOS platform.
+├── lib                             - Most important folder in the application, used to write most of the Dart code..
+    ├── main.dart                   - Starting point of the application
+    ├── core
+    │   ├── app_export.dart         - It contains commonly used file imports
+    │   ├── constants               - It contains static constant class file
+    │   └── utils                   - It contains common files and utilities of the application
+    ├── presentation                - It contains widgets of the screens 
+    ├── routes                      - It contains all the routes of the application
+    └── theme                       - It contains app theme and decoration classes
+    └── widgets                     - It contains all custom widget classes
 ```
-### Fonts
-We were unable to find following Fonts, Please add manually to ```app/src/main/res/font``` and uncomment code in respective font family XML files.
 
-```
-sfprotextregular
-sfprotextbold
-sfprodisplaybold
-```
+### How to format your code?
+
+- if your code is not formatted then run following command in your terminal to format code
+  ```
+  dart format .
+  ```
+
+### How you can improve code readability?
+
+Resolve the errors and warnings that are shown in the application.
+
+### Libraries and tools used
+
+- Provider - State management
+  https://pub.dev/packages/provider
+- cached_network_image - For storing internet image into cache
+  https://pub.dev/packages/cached_network_image
+
+### Support
+
+If you have any problems or questions, go to our Discord channel, where we will help you as quickly as possible: https://discord.com/invite/rFMnCG5MZ7
